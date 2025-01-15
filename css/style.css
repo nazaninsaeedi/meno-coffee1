@@ -4,11 +4,12 @@
 }
 *{
   font-family: kalameh;
+  src: url(../fonts/ttf/Kalameh-Medium.ttf);
 }
 body {
     font-family:kalameh;
     background-color: #1c1c1c;
-    color: red;
+    color: white;
     direction: rtl;
     text-align: center;
 }
