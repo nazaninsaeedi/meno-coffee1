@@ -1,0 +1,504 @@
+@font-face {
+  font-family: kalameh;
+  src: url(../fonts/ttf/Kalameh-Medium.ttf);
+}
+*{
+  font-family: kalameh;
+}
+body {
+    font-family:kalameh;
+    background-color: #1c1c1c;
+    color: white;
+    direction: rtl;
+    text-align: center;
+}
+h5{
+  margin:0;
+}
+h3{
+  margin:0;
+}
+h6{
+  margin-bottom: 0;
+}
+ 
+.down-to-up {
+  opacity: 0; /* شروع با حالت محو */
+  transform: translateY(20px); /* شروع از پایین */
+  transition: opacity 1s ease, transform 1s ease; /* انیمیشن */
+}
+.down-to-up.visible {
+  opacity: 1; /* حالت نمایان */
+  transform: translateY(0); /* به موقعیت اصلی برمی‌گردد */
+}
+.right-to-left {
+  opacity: 0; /* شروع با حالت محو */
+  transform: translatex(20px); /* شروع از پایین */
+  transition: opacity 2.5s ease, transform 2.5s ease; /* انیمیشن */
+}
+.right-to-left.visible {
+  opacity: 1; /* حالت نمایان */
+  transform: translatex(0); /* به موقعیت اصلی برمی‌گردد */
+}
+.fade-in-out {
+  opacity: 0; /* شروع با حالت محو */
+  transform: scale(0.5);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+.fade-in-out.visible {
+  opacity: 1; /* حالت نمایان */
+  transform:scale(1); /* به موقعیت اصلی برمی‌گردد */
+}
+.left-to-right {
+  opacity: 0; /* شروع با حالت محو */
+  transform: translatex(-20px); /* شروع از پایین */
+  transition: opacity 2s ease, transform 2s ease; /* انیمیشن */
+}
+.left-to-right.visible {
+  opacity: 1; /* حالت نمایان */
+  transform: translatex(0); /* به موقعیت اصلی برمی‌گردد */
+}
+.fade-in-out__popup {
+  opacity: 0; /* شروع با حالت محو */
+  transform: scale(0.5);
+  transition: opacity 5.5s ease, transform 5.5s ease;
+}
+.fade-in-out__popup.visible {
+  opacity: 1; /* حالت نمایان */
+}
+
+.Separator{
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #FED10F;
+  border-radius: 25rem;
+  margin-top: 15px;
+}
+
+.container {
+    overflow: hidden;
+    margin: auto;
+}
+.search-bar { 
+    justify-content: center;
+    margin: 20px 0;
+}
+/* From Uiverse.io by satyamchaudharydev */ 
+/* this is a recreation of twitter search in css */
+.form {
+    --input-text-color: #fff;
+    --input-bg-color: #73777A;
+    --focus-input-bg-color: transparent;
+    --text-color: #ffffff;
+    --active-color: #F8D01A;
+    --width-of-input: 200px;
+    --inline-padding-of-input: 1.2em;
+    --gap: 0.9rem;
+  }
+  /* form style */
+  .form {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+  }
+  /* a fancy bg for showing background and border when focus. */
+  .fancy-bg {
+    position: absolute;
+    width: 100%;
+    inset: 0;
+    background: var(--input-bg-color);
+    border-radius: 10px;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  /* label styling */
+  label {
+    width: 100%;
+    padding: 0.8em;
+    height: 20px;
+    padding-inline: var(--inline-padding-of-input);
+    display: flex;
+    align-items: center;
+  }
+  
+  .search,.close-btn {
+    position: absolute;
+  }
+  /* styling search-icon */
+  .search {
+    fill: var(--text-color);
+    left: var(--inline-padding-of-input);
+  }
+  /* svg -- size */
+  svg {
+    width: 17px;
+    display: block;
+  }
+  /* styling of close button */
+  .close-btn {
+    border: none;
+    right: var(--inline-padding-of-input);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 0.1em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--active-color);
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* styling of input */
+  .input {
+    color: var(--input-text-color);
+    width: 100%;
+    margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+    background: none;
+    border: none;
+    text-align: center;
+  }
+  
+  .input:focus {
+    outline: none;
+  }
+  
+  .input::placeholder {
+    color: var(--text-color)
+  }
+  /* input background change in focus */
+  .input:focus ~ .fancy-bg {
+    border: 1px solid var(--active-color);
+    background: var(--focus-input-bg-color);
+  }
+  /* search icon color change in focus */
+  .input:focus ~ .search {
+    fill: var(--active-color);
+  }
+  /* showing close button when typing */
+  .input:valid ~ .close-btn {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* this is for the default background in input,when selecting autofill options -- you can remove this code if you do not want to override the browser style.  */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+  }
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.tab {
+    padding: 10px 20px;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 4rem;
+}
+.tab.active {
+    background-color: #FED10F;
+}
+.food-title{
+  display:flex;
+  justify-content: center;
+  font-size: 120%;
+}
+.food-title hr{
+  border: 1px dashed;
+    width: 80%;
+    height: 0;
+}
+
+.backgrand{
+  width: 14rem;
+  height: 4.8rem;
+  padding-right: 1rem;
+  position: absolute;
+  left: 0px;
+  border-radius: 8px;
+  top: 3px;
+}
+.backgrand-title{
+ 
+}
+.name-title {
+  font-size: 18px;
+  color: white;
+}
+.prapertic-title{
+  display: none;
+}
+.icon-image{
+  width: 13px;
+  height: 13px;
+ 
+}
+.text-information{
+  font-size: 10px;
+  color: white;
+}
+.link-information{
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  text-decoration: none;
+  left: 30px;
+}
+.information {
+  position: relative;
+  width: 140px;
+  margin-top: 10px;
+  margin-right: 7px;
+  height: 19px;
+  display: flex;
+  justify-content: flex-start;
+  right: 1rem;
+  align-items: center;
+}
+.popup-body_icones{
+  display: none;
+}
+.time{
+  right: 35px;
+}
+.pic{
+  width: 80px;
+  position: absolute;
+  right: -5px;
+  height: 77px;
+}
+.pic1 {
+  width: 85px;
+  height: 80px;
+  border-radius: 100%;
+  box-shadow: 2px 1px 9px black;
+}
+.price{
+  background: #FED10F;
+  width: 7rem;
+  height: 1.5rem;
+  border-radius: 10px 56px 10px 10px;
+  right: 8.5rem;
+  top: -1.2rem;
+  position: relative;
+  padding-top: 2px;
+  font-size: 85%;
+}
+.food-list {
+    display: none;
+}
+.food-list.active {
+    display: block;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.main-box{
+  width: 265px;
+  margin: 0px auto;
+  height: 87px;
+  position: relative;
+  margin-bottom: 0.3rem;
+}
+ 
+.delivery-info, .contact-info, .map, .social-media {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.delivery-info svg, .contact-info svg, .social-media svg {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.social-media img {
+    width: 100%;
+}
+.food-list{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.food-list.active{
+    display: block;
+    opacity: 1;
+}
+ 
+.motor{
+  border: 1px dashed;
+  border-radius: 15px;
+}
+.Contract{
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  font-size: 200%;
+}
+.phone-item{
+  width: 50%;
+}
+.item1 {
+  grid-area: myArea;
+}
+.Contract-all{
+  display: grid;
+  grid-template-areas: ' myArea myArea';
+}
+.phone{
+  display:flex;
+  background-color: #2D343E;
+  margin-left: 30%;
+  height: 6rem;
+}
+.phone-img{
+  margin-top: -1rem;
+  width: 55px;
+}
+.phone-item_first{
+  width: 80%;
+}
+.phone-item_secend{
+  width: 20%;
+}
+.loc{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.contact{
+  display: flex;
+  background-image: url(../img/Vector.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px 0 60px 0;
+  object-fit: cover;
+  object-position: 15% 100%;
+}
+.insta{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2rem;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+.popup.active {
+  display: block;
+}
+.popup-header, .popup-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -12.5rem;
+}
+.popup-body {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-self: center;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.97);
+  z-index: 999;
+}
+.overlay.active {
+  display: block;
+}
+.popup-body div .pic1{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -120%;
+  transform: translate(-50%, -50%);
+}
+.popup-body div .price{
+  top: -4rem;
+  right: 4rem;
+  border-radius: 10px;
+  background-image: linear-gradient(#FECB00, #91760b);
+  color: #000;
+  padding:2px;
+  font-weight: bolder;
+}
+.popup-body div .prapertic-title{
+ display: block;
+ margin-bottom: 5rem;
+}
+.popup-body div:nth-of-type(1){
+position: relative;
+}
+.popup-footer_button{
+  background-color: transparent;
+  color: wheat;
+  border: transparent;
+  font-size: 200%;
+}
+.popup-body div .information-icone{
+  display:none;
+}
+.popup-body .popup-body_icones{
+  display: flex;
+  margin-right: 1rem;
+  gap: 0.2rem;
+ }
+.popup-body div .popup-body_icone{
+  display:block;
+}
+.popup-body div .information{
+  width: 100%;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 450px) {
+  .popup-body div .pic1 {
+    right: 6rem;
+}
+}
+@media only screen and (max-width: 320px) {
+  .popup-body div .pic1 {
+    right: -11%;
+}
+}
+
+
