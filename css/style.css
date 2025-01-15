@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'kalameh';
-  src: url(../fonts/ttf/Kalameh-Medium.ttf);
+  src: url('../fonts/ttf/Kalameh-Medium.ttf');
 }
 *{
   font-family: 'kalameh';
