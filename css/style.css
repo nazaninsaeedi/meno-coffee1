@@ -1,12 +1,12 @@
 @font-face {
-  font-family: kalameh;
+  font-family: 'kalameh';
   src: url(../fonts/ttf/Kalameh-Medium.ttf);
 }
 *{
-  font-family: kalameh;
+  font-family: 'kalameh';
 }
 body {
-    font-family:kalameh;
+    font-family:'kalameh';
     background-color: #1c1c1c;
     color: white;
     direction: rtl;
